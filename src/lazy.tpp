@@ -35,7 +35,7 @@ void apply(F const& f, Tuple const& t) {
 
 template <typename T>
 template <typename... Args>
-lazy<T>::lazy(Args&&... args) : handler_(), instance_(nullptr) {
+lazy<T>::lazy(Args const&... args) : handler_(), instance_(nullptr) {
     auto t = std::tuple<Args...>(args...);
     auto f = [&](Args... args) {
         instance_ = std::make_shared<T>(args...);

@@ -18,7 +18,7 @@ template <typename T>
 class lazy {
 public:
     template <typename... Args>
-    lazy(Args&&... args);
+    lazy(Args const&... args);
 
     std::shared_ptr<T> get();
     void enable();
